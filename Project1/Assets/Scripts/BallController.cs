@@ -2,14 +2,18 @@
 using System.Collections;
 
 public class BallController : MonoBehaviour {
+	public static BallController instance;
 
 	public float speed = 5;
 	private Rigidbody rb;
 
+	void Awake(){
+		instance = this;
+	}
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		//Debug.Log ("hi");
 	}
 
 	void FixedUpdate ()
@@ -26,6 +30,10 @@ public class BallController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+	
+	}
+
+	public void Kill(){
 	
 	}
 }
