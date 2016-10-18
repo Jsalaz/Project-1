@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour {
 
 	public float totalScore = 0;
 	public float totalTime = 0;
+    float fTime = 0;
 
 	Scene currentScene;
 
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void LoadLevel1(){
 		SceneManager.LoadScene ("Level1");
+        fTime = 0;
 	}
 
 
