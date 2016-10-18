@@ -39,11 +39,13 @@ public class BallController : MonoBehaviour {
 	public void Win(){
 		isAlive = false;
 		rb.constraints = RigidbodyConstraints.FreezePosition;
-		//other code for winning
-	}
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        //other code for winning
+    }
 
 	public void Kill(){
 		isAlive = false;
 		rb.constraints = RigidbodyConstraints.FreezePosition;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
 	}
 }
