@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KillTrigger : MonoBehaviour {
+public class WinTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
 		if (other.tag == "Player") {
 			Debug.Log ("Death");
-			BallController.instance.Kill();
+			BallController.instance.Win();
 		}
 	}
 }

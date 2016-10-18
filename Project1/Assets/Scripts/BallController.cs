@@ -6,9 +6,11 @@ public class BallController : MonoBehaviour {
 
 	public float speed = 5;
 	private Rigidbody rb;
+	bool isAlive;
 
 	void Awake(){
 		instance = this;
+		isAlive = true;
 	}
 
 	// Use this for initialization
@@ -21,11 +23,12 @@ public class BallController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		Debug.Log (moveHorizontal + " " + moveVertical);
-
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-
-		rb.AddForce (movement * speed);
+		//Debug.Log (moveHorizontal + " " + moveVertical);
+		if (isAlive) {
+			Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+			rb.AddForce (movement * speed);
+		}
+				
 	}
 
 	// Update is called once per frame
@@ -33,7 +36,14 @@ public class BallController : MonoBehaviour {
 	
 	}
 
+	public void Win(){
+		isAlive = false;
+		rb.constraints = RigidbodyConstraints.FreezePosition;
+		//other code for winning
+	}
+
 	public void Kill(){
-	
+		isAlive = false;
+		rb.constraints = RigidbodyConstraints.FreezePosition;
 	}
 }

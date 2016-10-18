@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000013424805522}
   m_Layer: 0
   m_Name: PlayerBall
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee65b4653eff1b044823f9ae16b81a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!135 &135000013096215862
 SphereCollider:
   m_ObjectHideFlags: 1
