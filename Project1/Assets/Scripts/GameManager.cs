@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Canvas inGameCanvas;
     //public Canvas menuCanvas;
     public Canvas gameOverCanvas;
+    public Canvas PopupHighScoreCanvas;
     public static GameManager instance;
     public GameState currentGameState = GameState.inGame; // = GameState.menu;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //currentGameState = GameState.menu;
+        PopupHighScoreCanvas.GetComponent<Canvas>().enabled = false;
     }
 
     void SetGameState(GameState newGameState)

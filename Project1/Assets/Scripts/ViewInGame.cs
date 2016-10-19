@@ -8,6 +8,7 @@ public class ViewInGame : MonoBehaviour
     public float endTime = 0;
     public float timer;
     public bool countTime;
+    public float highScore = 0;
 
     public static ViewInGame instance;
 
@@ -36,6 +37,7 @@ public class ViewInGame : MonoBehaviour
             scoreLabel.text = Mathf.Round(timer).ToString();
 
             highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
+        highScore = PlayerPrefs.GetFloat("highscore", 0);
         //}
 
     }

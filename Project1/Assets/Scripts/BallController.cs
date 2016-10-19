@@ -50,11 +50,6 @@ public class BallController : MonoBehaviour
         //other code for winning
         ViewInGame.instance.countTime = false;
 
-        //if (PlayerPrefs.GetFloat("highscore", 0) < ViewInGame.instance.timer)
-        //{
-        //    PlayerPrefs.SetFloat("highscore", ViewInGame.instance.timer);
-        //}
-
         if (PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
         {
             PlayerPrefs.SetFloat("highscore", ViewInGame.instance.timer);
