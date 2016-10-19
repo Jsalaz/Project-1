@@ -19,6 +19,7 @@ public class BallController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ViewInGame.instance.countTime = true;
     }
 
     void FixedUpdate()

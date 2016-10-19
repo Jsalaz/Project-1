@@ -20,15 +20,23 @@ public class ViewInGame : MonoBehaviour
     {
         //if (GameManager.instance.currentGameState == GameState.inGame)
         //{
-            scoreLabel.text = Mathf.Round(Time.time).ToString();
+        //    scoreLabel.text = Mathf.Round(Time.time).ToString();
         
-        highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
+        //highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
         //}
     }
     void FixedUpdate()
     {
         if(countTime)
             timer += Time.deltaTime;
+
+        //if (GameManager.instance.currentGameState == GameState.inGame)
+        //{
+            //scoreLabel.text = Mathf.Round(Time.time).ToString();
+            scoreLabel.text = Mathf.Round(timer).ToString();
+
+            highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
+        //}
 
     }
 }
