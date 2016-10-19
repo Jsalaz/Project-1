@@ -4,7 +4,7 @@ using System.Collections;
 public class BallController : MonoBehaviour {
 	public static BallController instance;
 
-	public float speed = 5;
+	public float speed = 2.0f;
 	private Rigidbody rb;
 	bool isAlive;
 
