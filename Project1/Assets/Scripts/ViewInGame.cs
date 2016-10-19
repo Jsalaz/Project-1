@@ -4,6 +4,10 @@ using System.Collections;
 public class ViewInGame : MonoBehaviour
 {
     public Text scoreLabel;
+    public Text highscoreLabel;
+    public float endTime = 0;
+    public float timer;
+    public bool countTime;
 
     public static ViewInGame instance;
 
@@ -17,6 +21,14 @@ public class ViewInGame : MonoBehaviour
         //if (GameManager.instance.currentGameState == GameState.inGame)
         //{
             scoreLabel.text = Mathf.Round(Time.time).ToString();
+        
+        highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
         //}
+    }
+    void FixedUpdate()
+    {
+        if(countTime)
+            timer += Time.deltaTime;
+
     }
 }
