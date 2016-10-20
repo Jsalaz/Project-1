@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour
 
     public float speed = 2.0f;
     private Rigidbody rb;
-    bool isAlive;
+    public bool isAlive;
 
     void Awake()
     {
@@ -45,11 +45,18 @@ public class BallController : MonoBehaviour
     public void Win()
     {
         isAlive = false;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
-        //other code for winning
+		//rb.constraints = RigidbodyConstraints.FreezeAll;
+        
+		GameManager.instance.SetEndLvl ();
+        //Popuphighscorecanvas will call viewendlvl
+		//ViewEndLvl.instance.EndLvl ();
+
+//<<<<<<< HEAD
+//=======
+		//other code for winning
         ViewInGame.instance.countTime = false;
 
+//>>>>>>> b5fd6b2fe9610a5a6895843515f3b71ba55f7f17
         if (PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
         {
             PlayerPrefs.SetFloat("highscore", ViewInGame.instance.timer);
@@ -59,8 +66,10 @@ public class BallController : MonoBehaviour
     public void Kill()
     {
         isAlive = false;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
+
+		GameManager.instance.SetGameOver ();
+		ViewGameOver.instance.GameOver();
 
         ViewInGame.instance.countTime = false;
     }

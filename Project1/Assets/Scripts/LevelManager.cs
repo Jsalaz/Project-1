@@ -33,13 +33,17 @@ public class LevelManager : MonoBehaviour {
 		return currentScene;
 	}
 
+	public void LoadMenu() {
+		SceneManager.LoadScene (0);
+	}
+
 	public void LoadLevel1(){
-		SceneManager.LoadScene ("Level1");
+		SceneManager.LoadScene (1);
         fTime = 0;
 	}
 
 	public void LoadLevel2(){
-		SceneManager.LoadScene ("Level2");
+		SceneManager.LoadScene (2);
 	}
-
+		
 }
