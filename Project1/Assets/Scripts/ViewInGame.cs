@@ -18,14 +18,10 @@ public class ViewInGame : MonoBehaviour
 
     void Update()
     {
-        //if (GameManager.instance.currentGameState == GameState.inGame)
-        //{
-        //    scoreLabel.text = Mathf.Round(Time.time).ToString();
-        
-        //highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
-        //}
-    }
-    void FixedUpdate()
+
+	}
+    
+	void FixedUpdate()
     {
         if(countTime)
             timer += Time.deltaTime;

@@ -45,15 +45,13 @@ public class BallController : MonoBehaviour
     public void Win()
     {
         isAlive = false;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
-        //other code for winning
-        ViewInGame.instance.countTime = false;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
+        
+		GameManager.instance.SetEndLvl ();
+		ViewEndLvl.instance.EndLvl ();
 
-        //if (PlayerPrefs.GetFloat("highscore", 0) < ViewInGame.instance.timer)
-        //{
-        //    PlayerPrefs.SetFloat("highscore", ViewInGame.instance.timer);
-        //}
+		//other code for winning
+        ViewInGame.instance.countTime = false;
 
         if (PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
         {
@@ -66,6 +64,9 @@ public class BallController : MonoBehaviour
         isAlive = false;
         rb.constraints = RigidbodyConstraints.FreezePosition;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+		GameManager.instance.SetGameOver ();
+		ViewGameOver.instance.GameOver();
 
         ViewInGame.instance.countTime = false;
     }
