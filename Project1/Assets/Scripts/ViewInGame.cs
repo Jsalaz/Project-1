@@ -32,8 +32,22 @@ public class ViewInGame : MonoBehaviour
             //scoreLabel.text = Mathf.Round(Time.time).ToString();
             scoreLabel.text = Mathf.Round(timer).ToString();
 
-            highscoreLabel.text = PlayerPrefs.GetFloat("highscore", 0).ToString("f0");
-        highScore = PlayerPrefs.GetFloat("highscore", 0);
+        if (LevelManager.instance.getScene().name == "Level1")
+        {
+            highscoreLabel.text = PlayerPrefs.GetFloat("Level1", 0).ToString("f0");
+            highScore = PlayerPrefs.GetFloat("Level1", 0);
+        }
+        else if (LevelManager.instance.getScene().name == "Level2")
+        {
+            highscoreLabel.text = PlayerPrefs.GetFloat("Level2", 0).ToString("f0");
+            highScore = PlayerPrefs.GetFloat("Level2", 0);
+        }
+
+        else if (LevelManager.instance.getScene().name == "Level3")
+        {
+            highscoreLabel.text = PlayerPrefs.GetFloat("Level3", 0).ToString("f0");
+            highScore = PlayerPrefs.GetFloat("Level3", 0);
+        }
         //}
 
     }

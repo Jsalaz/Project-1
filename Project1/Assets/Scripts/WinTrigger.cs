@@ -13,6 +13,7 @@ public class WinTrigger : MonoBehaviour
             BallController.instance.Win();
             GameManager.instance.PopupHighScoreCanvas.GetComponent<Canvas>().enabled = true;
             GameManager.instance.inGameCanvas.GetComponent<Canvas>().enabled = false;
+            GameManager.instance.endLvlCanvas.GetComponent<Canvas>().enabled = false;
         }
     }
 }

@@ -44,32 +44,50 @@ public class BallController : MonoBehaviour
 
     public void Win()
     {
-        isAlive = false;
-		//rb.constraints = RigidbodyConstraints.FreezeAll;
-        
-		GameManager.instance.SetEndLvl ();
-        //Popuphighscorecanvas will call viewendlvl
-		//ViewEndLvl.instance.EndLvl ();
 
-//<<<<<<< HEAD
-//=======
-		//other code for winning
+        Debug.Log(LevelManager.instance.getScene().name);
+
+        isAlive = false;
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
+
+        GameManager.instance.SetEndLvl();
+        //Popuphighscorecanvas will call viewendlvl
+        //ViewEndLvl.instance.EndLvl ();
+
+        //other code for winning
         ViewInGame.instance.countTime = false;
 
-//>>>>>>> b5fd6b2fe9610a5a6895843515f3b71ba55f7f17
-        if (PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
+        if (LevelManager.instance.getScene().name == "Level1")
         {
-            PlayerPrefs.SetFloat("highscore", ViewInGame.instance.timer);
+            if (PlayerPrefs.GetFloat("Level1", 0) > ViewInGame.instance.timer)
+            {
+                PlayerPrefs.SetFloat("Level1", ViewInGame.instance.timer);
+            }
+        }
+        else if (LevelManager.instance.getScene().name == "Level2")
+        {
+            if (PlayerPrefs.GetFloat("Level2", 0) > ViewInGame.instance.timer)
+            {
+                PlayerPrefs.SetFloat("Level2", ViewInGame.instance.timer);
+            }
+        }
+
+        else if (LevelManager.instance.getScene().name == "Level3")
+        {
+            if (PlayerPrefs.GetFloat("Level3", 0) > ViewInGame.instance.timer)
+            {
+                PlayerPrefs.SetFloat("Level3", ViewInGame.instance.timer);
+            }
         }
     }
 
     public void Kill()
     {
         isAlive = false;
-		rb.constraints = RigidbodyConstraints.FreezeAll;
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
 
-		GameManager.instance.SetGameOver ();
-		ViewGameOver.instance.GameOver();
+        GameManager.instance.SetGameOver();
+        ViewGameOver.instance.GameOver();
 
         ViewInGame.instance.countTime = false;
     }

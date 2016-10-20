@@ -5,8 +5,8 @@ public enum GameState
 {
     //menu,
     inGame,
-    endLevel,
     gameOver,
+    endLevel,
     popUp,
 }
 
@@ -16,12 +16,11 @@ public class GameManager : MonoBehaviour
     public Canvas inGameCanvas;
     public Canvas endLvlCanvas;
     public Canvas gameOverCanvas;
-    //<<<<<<< HEAD
+
     public Canvas PopupHighScoreCanvas;
-    //=======
+
 
     //singleton
-    //>>>>>>> b5fd6b2fe9610a5a6895843515f3b71ba55f7f17
     public static GameManager instance;
     //enum game state instance
     public GameState currentGameState;// = GameState.inGame; 
@@ -30,18 +29,22 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        //if(PlayerPrefs.GetFloat("Level1", 0) == 0)
+        //{
+        //    PlayerPrefs.SetFloat("Level1", 100000);
+        //}
         //currentGameState = GameState.inGame;
+        Debug.Log(System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2));
     }
 
     void Start()
     {
-        //<<<<<<< HEAD
         //currentGameState = GameState.menu;
-        PopupHighScoreCanvas.GetComponent<Canvas>().enabled = false;
-        //=======
-        currentGameState = GameState.inGame;
+        //PopupHighScoreCanvas.GetComponent<Canvas>().enabled = false;
+
+        currentGameState = GameState.inGame; //GameManager.instance.
         endLvlCanvas.enabled = false;
-        //>>>>>>> b5fd6b2fe9610a5a6895843515f3b71ba55f7f17
+        PopupHighScoreCanvas.enabled = false;
     }
 
     void SetGameState(GameState newGameState)
@@ -62,19 +65,21 @@ public class GameManager : MonoBehaviour
             endLvlCanvas.enabled = false;
             PopupHighScoreCanvas.enabled = false;
         }
-        else if (newGameState == GameState.popUp)
-        {
-            inGameCanvas.enabled = false;
-            //gameOverCanvas.enabled = false;
-            endLvlCanvas.enabled = false;
-            PopupHighScoreCanvas.enabled = true;
-        }
+        
         else if (newGameState == GameState.endLevel)
         {
             inGameCanvas.enabled = false;
             //gameOverCanvas.enabled = false;
             endLvlCanvas.enabled = true;
             PopupHighScoreCanvas.enabled = false;
+        }
+
+        else if (newGameState == GameState.popUp)
+        {
+            inGameCanvas.enabled = false;
+            //gameOverCanvas.enabled = false;
+            endLvlCanvas.enabled = false;
+            PopupHighScoreCanvas.enabled = true;
         }
 
         currentGameState = newGameState;
