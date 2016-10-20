@@ -4747,7 +4747,8 @@ MonoBehaviour:
   loseTime: {fileID: 785600295}
   winText: {fileID: 460046791}
   loseText: {fileID: 1647585440}
-  highScoreLabel: {fileID: 1390175587}
+  highScoreLabel: {fileID: 796198900}
+  timerf: 0
 --- !u!114 &1290471886
 MonoBehaviour:
   m_ObjectHideFlags: 0
