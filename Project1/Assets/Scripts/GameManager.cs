@@ -25,12 +25,12 @@ public class GameManager : MonoBehaviour
     void Awake ()
     {
         instance = this;
-		currentGameState = GameState.inGame;
+		//currentGameState = GameState.inGame;
 	}
 
     void Start()
     {
-        //currentGameState = GameState.menu;
+		currentGameState = GameState.inGame;
     }
 
     void SetGameState(GameState newGameState)

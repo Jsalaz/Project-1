@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour
 
     public float speed = 2.0f;
     private Rigidbody rb;
-    bool isAlive;
+    public bool isAlive;
 
     void Awake()
     {
@@ -62,8 +62,7 @@ public class BallController : MonoBehaviour
     public void Kill()
     {
         isAlive = false;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 
 		GameManager.instance.SetGameOver ();
 		ViewGameOver.instance.GameOver();
