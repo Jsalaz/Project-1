@@ -11,7 +11,9 @@ public class PopupHighScore : MonoBehaviour
     public Text highScoreLabel;
     public float timerf;
 
-    public float oldHighScore;
+    public float oldHighScore1;
+    public float oldHighScore2;
+    public float oldHighScore3;
 
     //public float timer;
     //public bool countTime;
@@ -21,7 +23,9 @@ public class PopupHighScore : MonoBehaviour
     void Awake()
     {
         instance = this;
-        oldHighScore = PlayerPrefs.GetFloat("Level1", 0);
+        oldHighScore1 = PlayerPrefs.GetFloat("Level1", 0);
+        oldHighScore2 = PlayerPrefs.GetFloat("Level2", 0);
+        oldHighScore3 = PlayerPrefs.GetFloat("Level3", 0);
     }
 
     void Start()
@@ -38,12 +42,12 @@ public class PopupHighScore : MonoBehaviour
         {
             highScoreLabel.text = System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2).ToString();
 
-            if (ViewInGame.instance.timer < oldHighScore) //(PlayerPrefs.GetFloat("Level1", 0))
+            if (ViewInGame.instance.timer < oldHighScore1 || PlayerPrefs.GetFloat("Level1", 0) == 0) //(PlayerPrefs.GetFloat("Level1", 0))
             {
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - oldHighScore), 2).ToString();
+                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - oldHighScore1), 2).ToString();
                 //PopupHighScore.instance.winTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = false;
             }
@@ -53,7 +57,7 @@ public class PopupHighScore : MonoBehaviour
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - oldHighScore), 2).ToString();
+                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - oldHighScore1), 2).ToString();
                 //PopupHighScore.instance.loseTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = false;
             }
@@ -62,12 +66,12 @@ public class PopupHighScore : MonoBehaviour
         {
             highScoreLabel.text = System.Math.Round((PlayerPrefs.GetFloat("Level2", 0)), 2).ToString();
 
-            if (ViewInGame.instance.timer < (PlayerPrefs.GetFloat("Level2", 0))) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
+            if (ViewInGame.instance.timer < oldHighScore2 || oldHighScore2 == 0) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
             {
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - (PlayerPrefs.GetFloat("Level2", 0))), 2).ToString();
+                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - oldHighScore2), 2).ToString();
                 //PopupHighScore.instance.winTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = false;
             }
@@ -77,7 +81,7 @@ public class PopupHighScore : MonoBehaviour
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - (PlayerPrefs.GetFloat("Level2", 0))), 2).ToString();
+                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - oldHighScore2), 2).ToString();
                 //PopupHighScore.instance.loseTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = false;
             }
@@ -87,12 +91,12 @@ public class PopupHighScore : MonoBehaviour
         {
             highScoreLabel.text = System.Math.Round((PlayerPrefs.GetFloat("Level3", 0)), 2).ToString();
 
-            if (ViewInGame.instance.timer < (PlayerPrefs.GetFloat("Level3", 0))) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
+            if (ViewInGame.instance.timer < oldHighScore3 || oldHighScore3 == 0) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
             {
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - (PlayerPrefs.GetFloat("Level3", 0))), 2).ToString();
+                PopupHighScore.instance.winTime.text = System.Math.Round((ViewInGame.instance.timer - oldHighScore3), 2).ToString();
                 //PopupHighScore.instance.winTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = false;
             }
@@ -102,7 +106,7 @@ public class PopupHighScore : MonoBehaviour
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = false;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseTime.GetComponent<Text>().enabled = true;
-                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - (PlayerPrefs.GetFloat("Level3", 0))), 2).ToString();
+                PopupHighScore.instance.loseTime.text = "+" + System.Math.Round((ViewInGame.instance.timer - oldHighScore3), 2).ToString();
                 //PopupHighScore.instance.loseTime.text = ((ViewInGame.instance.timer - float.Parse(highScoreLabel.text) * 100f) / 100f).ToString();
                 PopupHighScore.instance.winTime.GetComponent<Text>().enabled = false;
             }

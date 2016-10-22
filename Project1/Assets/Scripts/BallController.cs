@@ -59,24 +59,48 @@ public class BallController : MonoBehaviour
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
-            if (PlayerPrefs.GetFloat("Level1", 0) > ViewInGame.instance.timer)
+            if (PlayerPrefs.GetFloat("Level1", 0) == 0)
             {
                 PlayerPrefs.SetFloat("Level1", ViewInGame.instance.timer);
+            }
+
+            else
+            {
+                if (PlayerPrefs.GetFloat("Level1", 0) > ViewInGame.instance.timer)
+                {
+                    PlayerPrefs.SetFloat("Level1", ViewInGame.instance.timer);
+                }
             }
         }
         else if (LevelManager.instance.getScene().name == "Level2")
         {
-            if (PlayerPrefs.GetFloat("Level2", 0) > ViewInGame.instance.timer)
+            if (PlayerPrefs.GetFloat("Level2", 0) == 0)
             {
                 PlayerPrefs.SetFloat("Level2", ViewInGame.instance.timer);
+            }
+
+            else
+            {
+                if (PlayerPrefs.GetFloat("Level2", 0) > ViewInGame.instance.timer)
+                {
+                    PlayerPrefs.SetFloat("Level2", ViewInGame.instance.timer);
+                }
             }
         }
 
         else if (LevelManager.instance.getScene().name == "Level3")
         {
-            if (PlayerPrefs.GetFloat("Level3", 0) > ViewInGame.instance.timer)
+            if (PlayerPrefs.GetFloat("Level3", 0) == 0)
             {
                 PlayerPrefs.SetFloat("Level3", ViewInGame.instance.timer);
+            }
+
+            else
+            {
+                if (PlayerPrefs.GetFloat("Level3", 0) > ViewInGame.instance.timer)
+                {
+                    PlayerPrefs.SetFloat("Level3", ViewInGame.instance.timer);
+                }
             }
         }
     }
@@ -88,6 +112,16 @@ public class BallController : MonoBehaviour
 
         GameManager.instance.SetGameOver();
         ViewGameOver.instance.GameOver();
+
+        if (LevelManager.instance.getScene().name == "Level2")
+        {
+            GameManager.instance.gameOverCanvas.GetComponent<Canvas>().enabled = true;
+        }
+
+        if (LevelManager.instance.getScene().name == "Level3")
+        {
+            GameManager.instance.gameOverCanvas.GetComponent<Canvas>().enabled = true;
+        }
 
         ViewInGame.instance.countTime = false;
     }

@@ -29,12 +29,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        //if(PlayerPrefs.GetFloat("Level1", 0) == 0)
-        //{
-        //    PlayerPrefs.SetFloat("Level1", 100000);
-        //}
-        //currentGameState = GameState.inGame;
-        Debug.Log(System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2));
+
+        //PlayerPrefs.DeleteAll();
+
+        //Debug.Log(System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2));
     }
 
     void Start()
@@ -45,6 +43,7 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.inGame; //GameManager.instance.
         endLvlCanvas.enabled = false;
         PopupHighScoreCanvas.enabled = false;
+        GameManager.instance.PopupHighScoreCanvas.GetComponent<Canvas>().enabled = false;
     }
 
     void SetGameState(GameState newGameState)
