@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29641894, g: 0.24589941, b: 0.23150435, a: 1}
+  m_IndirectSpecularColor: {r: 0.29636982, g: 0.24589941, b: 0.23150435, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2328,51 +2328,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49bf51831158ad34e92a134ab3405185, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &770670516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 770670518}
-  - 114: {fileID: 770670517}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &770670517
+--- !u!114 &770670517 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 770670516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1558537904}
   m_Script: {fileID: 11500000, guid: 7d6c213c689deaf42b87d871a2e34d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inGameCanvas: {fileID: 655542784}
-  endLvlCanvas: {fileID: 1595640047}
-  gameOverCanvas: {fileID: 1570231759}
-  PopupHighScoreCanvas: {fileID: 912311655}
-  currentGameState: 0
---- !u!4 &770670518
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 770670516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.912395, y: -66.126785, z: -0.7231798}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
 --- !u!1 &787705787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,6 +4186,68 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012994738272, guid: 49bf51831158ad34e92a134ab3405185,
     type: 2}
   m_PrefabInternal: {fileID: 2046317774}
+--- !u!1001 &1558537904
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -22.912395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -66.126785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.7231798
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010684343870, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+        type: 2}
+      propertyPath: inGameCanvas
+      value: 
+      objectReference: {fileID: 655542784}
+    - target: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+        type: 2}
+      propertyPath: endLvlCanvas
+      value: 
+      objectReference: {fileID: 1595640047}
+    - target: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+        type: 2}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 1570231759}
+    - target: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+        type: 2}
+      propertyPath: PopupHighScoreCanvas
+      value: 
+      objectReference: {fileID: 912311655}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c9e7fefbc29881b4ba274b9659ae84b0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1570231758
 Prefab:
   m_ObjectHideFlags: 0

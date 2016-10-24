@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public Canvas inGameCanvas;
     public Canvas endLvlCanvas;
     public Canvas gameOverCanvas;
-
     public Canvas PopupHighScoreCanvas;
 
 

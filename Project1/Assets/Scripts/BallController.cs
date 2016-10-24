@@ -44,11 +44,11 @@ public class BallController : MonoBehaviour
 
     public void Win()
     {
-
-        Debug.Log(LevelManager.instance.getScene().name);
+		//Should only work if program editing starts from MainMenu Scene
+        //Debug.Log(LevelManager.instance.getScene().name);
 
         isAlive = false;
-        //rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
 
         GameManager.instance.SetEndLvl();
         //Popuphighscorecanvas will call viewendlvl
