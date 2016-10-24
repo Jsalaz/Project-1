@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29641894, g: 0.24589941, b: 0.23150435, a: 1}
+  m_IndirectSpecularColor: {r: 0.29636982, g: 0.24589941, b: 0.23150435, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -944,6 +944,16 @@ Prefab:
     - target: {fileID: 1000014192470818, guid: c6314691a34466441b05abbbb345a889, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013907620320, guid: c6314691a34466441b05abbbb345a889,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1421473876}
+    - target: {fileID: 114000013907620320, guid: c6314691a34466441b05abbbb345a889,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetEndLvl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6314691a34466441b05abbbb345a889, type: 2}
@@ -3520,7 +3530,6 @@ GameObject:
   - 33: {fileID: 1077893387}
   - 136: {fileID: 1077893386}
   - 23: {fileID: 1077893385}
-  - 114: {fileID: 1077893384}
   - 114: {fileID: 1077893383}
   m_Layer: 0
   m_Name: WinTrigger
@@ -3552,18 +3561,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70e918bbee789c5468b10ff308d308fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1077893384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000010142491180, guid: 829f4f9e1ad679846941b3f7d87f3827,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077893381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!23 &1077893385
@@ -4652,6 +4649,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011492940372, guid: 1fbe8b0f7e4309e4fadfdd9755d6a745,
     type: 2}
   m_PrefabInternal: {fileID: 1416127664}
+--- !u!114 &1421473876 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014236248448, guid: c9e7fefbc29881b4ba274b9659ae84b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1773219864}
+  m_Script: {fileID: 11500000, guid: 7d6c213c689deaf42b87d871a2e34d7d, type: 3}
 --- !u!1001 &1424446021
 Prefab:
   m_ObjectHideFlags: 0
@@ -5665,6 +5668,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012622503088, guid: ed3f277e727732b468fc990609f4cc41, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000011837468998, guid: ed3f277e727732b468fc990609f4cc41,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
