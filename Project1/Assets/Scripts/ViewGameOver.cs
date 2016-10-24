@@ -15,20 +15,20 @@ public class ViewGameOver : MonoBehaviour {
 
 	public void GameOver(){
 		tempScore = ViewInGame.instance.timer;
-		scoreLabel.text = Mathf.Round(tempScore).ToString();
+		scoreLabel.text = "\n" + System.Math.Round(tempScore, 2).ToString();
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
-            highscoreLabel.text = PlayerPrefs.GetFloat("Level1", 0).ToString("f0");
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level1", 0), 2).ToString();
         }
         else if (LevelManager.instance.getScene().name == "Level2")
         {
-            highscoreLabel.text = PlayerPrefs.GetFloat("Level2", 0).ToString("f0");
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level2", 0), 2).ToString();
         }
 
         else if (LevelManager.instance.getScene().name == "Level3")
         {
-            highscoreLabel.text = PlayerPrefs.GetFloat("Level3", 0).ToString("f0");
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level3", 0), 2).ToString();
         }
 	}
 }
