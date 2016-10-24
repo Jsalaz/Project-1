@@ -6,7 +6,7 @@ public class KillTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		if (other.tag == "Player") {
-			Debug.Log ("Death");
+			//Debug.Log ("Death");
 			BallController.instance.Kill();
 		}
 	}

@@ -48,7 +48,7 @@ public class BallController : MonoBehaviour
         //Debug.Log(LevelManager.instance.getScene().name);
 
         isAlive = false;
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
 
         GameManager.instance.SetEndLvl();
         //Popuphighscorecanvas will call viewendlvl
