@@ -56,6 +56,7 @@ public class BallController : MonoBehaviour
 
         //other code for winning
         ViewInGame.instance.countTime = false;
+		LevelManager.instance.SetTime(ViewInGame.instance.timer, true);
 
         if (LevelManager.instance.getScene().name == "Level1")
         {

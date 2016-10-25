@@ -59,4 +59,11 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+	public void SetTime(float endTime, bool winLvl)
+	{
+		if (winLvl)
+		{
+			totalTime += endTime;
+		}
+	}
 }

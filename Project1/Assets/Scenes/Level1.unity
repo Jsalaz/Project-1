@@ -546,7 +546,7 @@ Canvas:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2116442339}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2136,7 +2136,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 598, y: 206.23}
+  m_AnchoredPosition: {x: 598, y: 371}
   m_SizeDelta: {x: 727, y: 445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530700580
@@ -3391,7 +3391,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 755, y: 206.22}
+  m_AnchoredPosition: {x: 755, y: 356}
   m_SizeDelta: {x: 727, y: 445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760578378
