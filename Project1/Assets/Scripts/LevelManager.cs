@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     public float totalScore = 0;
     public float totalTime = 0;
+    public ArrayList totalScoreArray;
     //float fTime = 0;
 
     Scene currentScene;
@@ -17,13 +18,12 @@ public class LevelManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(transform.gameObject);
-
     }
 
     // Use this for initialization
     void Start()
     {
-
+        totalScoreArray = new ArrayList();
     }
 
     // Update is called once per frame

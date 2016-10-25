@@ -56,7 +56,10 @@ public class BallController : MonoBehaviour
 
         //other code for winning
         ViewInGame.instance.countTime = false;
+        float timef = ViewInGame.instance.timer;
 		LevelManager.instance.SetTime(ViewInGame.instance.timer, true);
+
+        //LevelManager.instance.totalScoreArray += ViewInGame.instance.timer;
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
@@ -64,6 +67,7 @@ public class BallController : MonoBehaviour
             {
                 PlayerPrefs.SetFloat("Level1HighScore", ViewInGame.instance.timer);
                 PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
+                LevelManager.instance.totalScoreArray.Add(timef);
             }
 
             else
@@ -72,10 +76,12 @@ public class BallController : MonoBehaviour
                 {
                     PlayerPrefs.SetFloat("Level1HighScore", ViewInGame.instance.timer);
                     PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
                 else
                 {
                     PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
                 
             }
@@ -86,6 +92,7 @@ public class BallController : MonoBehaviour
             {
                 PlayerPrefs.SetFloat("Level2HighScore", ViewInGame.instance.timer);
                 PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
+                LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
             }
 
             else
@@ -94,10 +101,12 @@ public class BallController : MonoBehaviour
                 {
                     PlayerPrefs.SetFloat("Level2HighScore", ViewInGame.instance.timer);
                     PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
                 else
                 {
                     PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
             }
         }
@@ -108,6 +117,7 @@ public class BallController : MonoBehaviour
             {
                 PlayerPrefs.SetFloat("Level3HighScore", ViewInGame.instance.timer);
                 PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
+                LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
             }
 
             else
@@ -116,10 +126,12 @@ public class BallController : MonoBehaviour
                 {
                     PlayerPrefs.SetFloat("Level3HighScore", ViewInGame.instance.timer);
                     PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
                 else
                 {
                     PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
+                    LevelManager.instance.totalScoreArray.Add(ViewInGame.instance.timer);
                 }
             }
         }

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Canvas endLvlCanvas;
     public Canvas gameOverCanvas;
     public Canvas PopupHighScoreCanvas;
+    
 
 
     //singleton
@@ -29,10 +30,9 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
+        //totalScore = new ArrayList();
+
         //PlayerPrefs.DeleteAll();
-        PlayerPrefs.DeleteKey("Level1Score");
-        PlayerPrefs.DeleteKey("Level2Score");
-        PlayerPrefs.DeleteKey("Level3Score");
 
         //Debug.Log(System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2));
     }
@@ -46,6 +46,14 @@ public class GameManager : MonoBehaviour
         endLvlCanvas.enabled = false;
         PopupHighScoreCanvas.enabled = false;
         GameManager.instance.PopupHighScoreCanvas.GetComponent<Canvas>().enabled = false;
+
+        //PlayerPrefs.DeleteKey("Level1Score");
+        //PlayerPrefs.DeleteKey("Level2Score");
+        //PlayerPrefs.DeleteKey("Level3Score");.
+        //Debug.Log("Level 1 Previous Score " + PlayerPrefs.GetFloat("Level1Score", 0));
+        //Debug.Log("Level 2 Previous Score " + PlayerPrefs.GetFloat("Level2Score", 0));
+        //Debug.Log("Level 3 Previous Score " + PlayerPrefs.GetFloat("Level3Score", 0));
+
     }
 
     void SetGameState(GameState newGameState)
@@ -66,7 +74,7 @@ public class GameManager : MonoBehaviour
             endLvlCanvas.enabled = false;
             PopupHighScoreCanvas.enabled = false;
         }
-        
+
         else if (newGameState == GameState.endLevel)
         {
             inGameCanvas.enabled = false;
@@ -89,6 +97,11 @@ public class GameManager : MonoBehaviour
     public void SetEndLvl()
     {
         SetGameState(GameState.endLevel);
+    }
+
+    public void SetFinalCanvas()
+    {
+        ViewEndLvl.instance.EndLvl();
     }
 
     public void SetGameOver()
