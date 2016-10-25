@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Level1Score");
+        PlayerPrefs.DeleteKey("Level2Score");
+        PlayerPrefs.DeleteKey("Level3Score");
 
         //Debug.Log(System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2));
     }

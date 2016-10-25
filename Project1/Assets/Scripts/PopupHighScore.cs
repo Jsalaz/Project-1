@@ -23,9 +23,9 @@ public class PopupHighScore : MonoBehaviour
     void Awake()
     {
         instance = this;
-        oldHighScore1 = PlayerPrefs.GetFloat("Level1", 0);
-        oldHighScore2 = PlayerPrefs.GetFloat("Level2", 0);
-        oldHighScore3 = PlayerPrefs.GetFloat("Level3", 0);
+        oldHighScore1 = PlayerPrefs.GetFloat("Level1HighScore", 0);
+        oldHighScore2 = PlayerPrefs.GetFloat("Level2HighScore", 0);
+        oldHighScore3 = PlayerPrefs.GetFloat("Level3HighScore", 0);
     }
 
     void Start()
@@ -40,9 +40,9 @@ public class PopupHighScore : MonoBehaviour
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
-            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level1", 0)), 2).ToString();
+            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level1HighScore", 0)), 2).ToString();
 
-            if (ViewInGame.instance.timer < oldHighScore1 || PlayerPrefs.GetFloat("Level1", 0) == 0) //(PlayerPrefs.GetFloat("Level1", 0))
+            if (ViewInGame.instance.timer < oldHighScore1 || oldHighScore1 == 0) //(PlayerPrefs.GetFloat("Level1", 0))
             {
                 PopupHighScore.instance.winText.GetComponent<Text>().enabled = true;
                 PopupHighScore.instance.loseText.GetComponent<Text>().enabled = false;
@@ -64,7 +64,7 @@ public class PopupHighScore : MonoBehaviour
         }
         else if (LevelManager.instance.getScene().name == "Level2")
         {
-            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level2", 0)), 2).ToString();
+            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level2HighScore", 0)), 2).ToString();
 
             if (ViewInGame.instance.timer < oldHighScore2 || oldHighScore2 == 0) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
             {
@@ -89,7 +89,7 @@ public class PopupHighScore : MonoBehaviour
 
         else if (LevelManager.instance.getScene().name == "Level3")
         {
-            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level3", 0)), 2).ToString();
+            highScoreLabel.text = "\n" + System.Math.Round((PlayerPrefs.GetFloat("Level3HighScore", 0)), 2).ToString();
 
             if (ViewInGame.instance.timer < oldHighScore3 || oldHighScore3 == 0) //if(PlayerPrefs.GetFloat("highscore", 0) > ViewInGame.instance.timer)
             {

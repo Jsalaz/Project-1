@@ -60,47 +60,66 @@ public class BallController : MonoBehaviour
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
-            if (PlayerPrefs.GetFloat("Level1", 0) == 0)
+            if (PlayerPrefs.GetFloat("Level1HighScore", 0) == 0)
             {
-                PlayerPrefs.SetFloat("Level1", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level1HighScore", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
             }
 
             else
             {
-                if (PlayerPrefs.GetFloat("Level1", 0) > ViewInGame.instance.timer)
+                if (PlayerPrefs.GetFloat("Level1HighScore", 0) > ViewInGame.instance.timer)
                 {
-                    PlayerPrefs.SetFloat("Level1", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level1HighScore", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
                 }
+                else
+                {
+                    PlayerPrefs.SetFloat("Level1Score", ViewInGame.instance.timer);
+                }
+                
             }
         }
         else if (LevelManager.instance.getScene().name == "Level2")
         {
-            if (PlayerPrefs.GetFloat("Level2", 0) == 0)
+            if (PlayerPrefs.GetFloat("Level2HighScore", 0) == 0)
             {
-                PlayerPrefs.SetFloat("Level2", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level2HighScore", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
             }
 
             else
             {
-                if (PlayerPrefs.GetFloat("Level2", 0) > ViewInGame.instance.timer)
+                if (PlayerPrefs.GetFloat("Level2HighScore", 0) > ViewInGame.instance.timer)
                 {
-                    PlayerPrefs.SetFloat("Level2", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level2HighScore", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("Level2Score", ViewInGame.instance.timer);
                 }
             }
         }
 
         else if (LevelManager.instance.getScene().name == "Level3")
         {
-            if (PlayerPrefs.GetFloat("Level3", 0) == 0)
+            if (PlayerPrefs.GetFloat("Level3HighScore", 0) == 0)
             {
-                PlayerPrefs.SetFloat("Level3", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level3HighScore", ViewInGame.instance.timer);
+                PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
             }
 
             else
             {
-                if (PlayerPrefs.GetFloat("Level3", 0) > ViewInGame.instance.timer)
+                if (PlayerPrefs.GetFloat("Level3HighScore", 0) > ViewInGame.instance.timer)
                 {
-                    PlayerPrefs.SetFloat("Level3", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level3HighScore", ViewInGame.instance.timer);
+                    PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("Level3Score", ViewInGame.instance.timer);
                 }
             }
         }

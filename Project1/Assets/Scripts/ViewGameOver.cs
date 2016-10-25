@@ -19,16 +19,16 @@ public class ViewGameOver : MonoBehaviour {
 
         if (LevelManager.instance.getScene().name == "Level1")
         {
-            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level1", 0), 2).ToString();
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level1HighScore", 0), 2).ToString();
         }
         else if (LevelManager.instance.getScene().name == "Level2")
         {
-            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level2", 0), 2).ToString();
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level2HighScore", 0), 2).ToString();
         }
 
         else if (LevelManager.instance.getScene().name == "Level3")
         {
-            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level3", 0), 2).ToString();
+            highscoreLabel.text = "\n" + System.Math.Round(PlayerPrefs.GetFloat("Level3HighScore", 0), 2).ToString();
         }
 	}
 }
