@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.gameOver);
     }
+
     // Update is called once per frame
     void Update()
     {
