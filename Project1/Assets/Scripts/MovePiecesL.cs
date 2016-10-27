@@ -14,7 +14,7 @@ public class MovePiecesL : MonoBehaviour
 
     void Start()
     {
-        startPosition = target.transform.localPosition; //transform.position
+        startPosition = target.transform.localPosition; 
         currentPosition = startPosition;
 
         StartCoroutine(Move());
@@ -40,10 +40,8 @@ public class MovePiecesL : MonoBehaviour
 
             while (percentage <= .15)
             {
-                Debug.Log("1: " + percentage);
                 percentage = Mathf.SmoothDamp(percentage, 1.0f, ref vel, 8f);
-                //transform.position = Vector3.SmoothDamp(transform.position, targetPositionL, ref velocity, smoothTime);
-                currentPosition = Vector3.Lerp(target.transform.localPosition, targetPositionNew, percentage); //targetPositionL >> targetPositionNew
+                currentPosition = Vector3.Lerp(target.transform.localPosition, targetPositionNew, percentage);
                 target.transform.localPosition = currentPosition;
                 yield return 0;
             }
@@ -51,13 +49,11 @@ public class MovePiecesL : MonoBehaviour
             yield return new WaitForSeconds(.3f);
 
             percentage = 0;
-            //transform.position = Vector3.SmoothDamp(transform.position, targetPositionR, ref velocity, smoothTime);
+
             while (percentage <= .15)
             {
-                Debug.Log("2: " + percentage);
                 percentage = Mathf.SmoothDamp(percentage, 1.0f, ref vel, 8f);
-                //transform.position = Vector3.SmoothDamp(transform.position, targetPositionL, ref velocity, smoothTime);
-                currentPosition = Vector3.Lerp(target.transform.localPosition, startPosition, percentage); //targetPositionR, percentage);
+                currentPosition = Vector3.Lerp(target.transform.localPosition, startPosition, percentage);
                 target.transform.localPosition = currentPosition;
                 yield return 0;
             }
